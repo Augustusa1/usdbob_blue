@@ -15,8 +15,8 @@
   <body>
     <div class="widget">
       <h4>Boliviano Blue</h4>
-      <p id="compra">Compra: Cargando...</p>
-      <p id="venta">Venta: Cargando...</p>
+      <p id="buy">Compra: Cargando...</p>
+      <p id="sell">Venta: Cargando...</p>
       <small id="lastUpdate">Última actualización: Cargando...</small>
     </div>
 
@@ -27,8 +27,8 @@
         const data = await response.json();  // Parsear la respuesta JSON
 
         // Actualizar el contenido de la página con los datos obtenidos
-        document.getElementById('compra').textContent = 'Compra: Bs ' + data.compra;
-        document.getElementById('venta').textContent = 'Venta: Bs ' + data.venta;
+        document.getElementById('compra').textContent = 'Compra: Bs ' + data.buy;
+        document.getElementById('venta').textContent = 'Venta: Bs ' + data.sell;
         document.getElementById('lastUpdate').textContent = 'Última actualización: ' + data.lastUpdate;
       }
 
