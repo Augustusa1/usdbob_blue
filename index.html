@@ -89,8 +89,8 @@
         const data = await response.json();  // Parsear la respuesta JSON
 
         // Actualizar el contenido de la página con los datos obtenidos
-        document.getElementById('compra').textContent = 'Compra: Bs ' + data.compra;
-        document.getElementById('venta').textContent = 'Venta: Bs ' + data.venta;
+        document.getElementById('compra').textContent = 'Bs ' + data.compra;
+        document.getElementById('venta').textContent = 'Bs ' + data.venta;
         document.getElementById('lastUpdate').textContent = 'Última actualización: ' + data.lastUpdate;
       }
 
