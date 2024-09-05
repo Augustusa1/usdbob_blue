@@ -28,4 +28,23 @@
       }).obtenerDatosWidget();
     </script>
   </body>
+
+<script>
+      // Función para hacer la solicitud a la API de Google Apps Script
+      async function obtenerDatos() {
+        const response = await fetch('https://script.google.com/macros/s/AKfycby6Ez26dlJvAAZ-963VM_GlTfZexzjtrc3cQE5zaAmOiCXwivYaUa3ybwBxMuQiXbrG/exec');  // URL de tu Web App
+        const data = await response.json();  // Parsear la respuesta JSON
+
+        // Actualizar el contenido de la página con los datos obtenidos
+        document.getElementById('compra').textContent = 'Compra: Bs ' + data.compra;
+        document.getElementById('venta').textContent = 'Venta: Bs ' + data.venta;
+        document.getElementById('lastUpdate').textContent = 'Última actualización: ' + data.lastUpdate;
+      }
+
+      // Llamar a la función para obtener los datos cuando la página se carga
+      window.onload = obtenerDatos;
+    </script>
+  </body>
+</html>
+  
 </html>
