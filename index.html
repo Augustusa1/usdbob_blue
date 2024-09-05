@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      .widget {
+        padding: 15px;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        width: 300px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="widget">
+      <h4>Boliviano Blue</h4>
+      <p id="compra">Compra: Cargando...</p>
+      <p id="venta">Venta: Cargando...</p>
+      <small id="lastUpdate">Última actualización: Cargando...</small>
+    </div>
+    <script>
+      // Llamamos a la función del servidor de Google Apps Script para obtener los datos
+      google.script.run.withSuccessHandler(function(data) {
+        document.getElementById('compra').textContent = 'Compra: Bs ' + data.compra;
+        document.getElementById('venta').textContent = 'Venta: Bs ' + data.venta;
+        document.getElementById('lastUpdate').textContent = 'Última actualización: ' + data.lastUpdate;
+      }).obtenerDatosWidget();
+    </script>
+  </body>
+</html>
