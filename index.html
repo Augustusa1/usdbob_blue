@@ -21,7 +21,7 @@
     </div>
     <script>
       // Llamamos a la función del servidor de Google Apps Script para obtener los datos
-      google.script.run.withSuccessHandler(function(data) {
+      google.script.run.withSuccessHandler(function(obtenerDatosDeWeb) {
         document.getElementById('compra').textContent = 'Compra: Bs ' + data.compra;
         document.getElementById('venta').textContent = 'Venta: Bs ' + data.venta;
         document.getElementById('lastUpdate').textContent = 'Última actualización: ' + data.lastUpdate;
@@ -42,7 +42,7 @@
       }
 
       // Llamar a la función para obtener los datos cuando la página se carga
-      window.onload = obtenerDatos;
+      window.onload = obtenerDatosDeWeb;
     </script>
   </body>
 </html>
