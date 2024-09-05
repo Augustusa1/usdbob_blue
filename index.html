@@ -19,20 +19,11 @@
       <p id="venta">Venta: Cargando...</p>
       <small id="lastUpdate">Última actualización: Cargando...</small>
     </div>
-    <script>
-      // Llamamos a la función del servidor de Google Apps Script para obtener los datos
-      google.script.run.withSuccessHandler(function(obtenerDatosDeWeb) {
-        document.getElementById('compra').textContent = 'Compra: Bs ' + data.compra;
-        document.getElementById('venta').textContent = 'Venta: Bs ' + data.venta;
-        document.getElementById('lastUpdate').textContent = 'Última actualización: ' + data.lastUpdate;
-      }).obtenerDatosWidget();
-    </script>
-  </body>
 
-<script>
+    <script>
       // Función para hacer la solicitud a la API de Google Apps Script
       async function obtenerDatosDeWeb() {
-        const response = await fetch('https://script.google.com/macros/s/AKfycby7D-1t_6RVDPYmTU1JPFzS2nVlz0VcHlYhhHHqr8JKVSC6_MI69y6W3lHPhGhI8bjs/exec);  // URL de tu Web App
+        const response = await fetch('https://script.google.com/macros/s/AKfycby7D-1t_6RVDPYmTU1JPFzS2nVlz0VcHlYhhHHqr8JKVSC6_MI69y6W3lHPhGhI8bjs/exec');  // URL de tu Web App
         const data = await response.json();  // Parsear la respuesta JSON
 
         // Actualizar el contenido de la página con los datos obtenidos
@@ -46,5 +37,4 @@
     </script>
   </body>
 </html>
-  
-</html>
+
