@@ -1,25 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización Boliviano Blue</title>
     <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
       .widget {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 350px;
+        text-align: center;
+        border: 2px solid #2a9d8f;
+      }
+
+      .widget h4 {
+        margin: 0;
+        font-size: 24px;
+        color: #264653;
+      }
+
+      .price {
+        font-size: 48px;
+        font-weight: bold;
+        color: #e76f51;
+        margin: 10px 0;
+      }
+
+      .label {
+        font-size: 16px;
+        color: #264653;
+      }
+
+      .update {
+        font-size: 12px;
+        color: #757575;
+        margin-top: 15px;
+      }
+
+      .buy-sell {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .buy, .sell {
+        background-color: #e9c46a;
         padding: 15px;
-        background-color: #f4f4f4;
-        border: 1px solid #ccc;
-        width: 300px;
-        border-radius: 5px;
+        width: 45%;
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #264653;
       }
     </style>
   </head>
   <body>
     <div class="widget">
       <h4>Boliviano Blue</h4>
-      <p id="compra">Compra: Cargando...</p>
-      <p id="venta">Venta: Cargando...</p>
-      <small id="lastUpdate">Última actualización: Cargando...</small>
+      <div class="buy-sell">
+        <div class="buy">
+          <span class="label">Compra</span>
+          <div class="price" id="compra">Cargando...</div>
+        </div>
+        <div class="sell">
+          <span class="label">Venta</span>
+          <div class="price" id="venta">Cargando...</div>
+        </div>
+      </div>
+      <div class="update" id="lastUpdate">Última actualización: Cargando...</div>
     </div>
-
+    
     <script>
       // Función para hacer la solicitud a la API de Google Apps Script
       async function obtenerDatosDeWeb() {
