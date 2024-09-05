@@ -53,9 +53,9 @@
         // Actualizar el ticker con los datos obtenidos
         const tickerElement = document.getElementById('ticker');
         tickerElement.innerHTML = `
-          <div class="ticker-item">Boliviano Blue Compra: Bs ${data.compra}</div>
-          <div class="ticker-item">Boliviano Blue Venta: Bs ${data.venta}</div>
-          <div class="ticker-item">Última actualización: ${data.lastUpdate}</div>
+          <div class="ticker-item">Compra: Bs ${data.compra}</div>
+          <div class="ticker-item">Venta: Bs ${data.venta}</div>
+          <div class="ticker-item">Updated: ${data.lastUpdate}</div>
         `;
       }
       // Llamar a la función para obtener los datos cuando la página se carga
